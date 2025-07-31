@@ -2,8 +2,8 @@
 
 **Mata Kuliah**: Sistem Operasi
 **Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Nama Lengkap>`
-**NIM**: `<Nomor Induk Mahasiswa>`
+**Nama**: `Haidar Habibi Al Farisi`
+**NIM**: `240202862`
 **Modul yang Dikerjakan**:
 `(Contoh: Modul 1 – System Call dan Instrumentasi Kernel)`
 
@@ -14,21 +14,15 @@
 Tuliskan deskripsi singkat dari modul yang Anda kerjakan. Misalnya:
 
 * **Modul 1 – System Call dan Instrumentasi Kernel**:
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
----
+Setelah proses parent melakukan fork(), kedua proses (parent dan child) berbagi halaman memori yang sama secara read-only.
 
-## 🛠️ Rincian Implementasi
+Ketika salah satu proses mencoba menulis, terjadi page fault, dan halaman tersebut disalin secara terpisah (copy-on-write).
 
-Tuliskan secara ringkas namun jelas apa yang Anda lakukan:
+Mengimplementasikan system call shmget(int key) dan shmrelease(int key) untuk mendukung memori bersama (shared memory).
 
-### Contoh untuk Modul 1:
+Dua proses (parent dan child) mengakses area memori yang sama menggunakan kunci yang sama.
 
-* Menambahkan dua system call baru di file `sysproc.c` dan `syscall.c`
-* Mengedit `user.h`, `usys.S`, dan `syscall.h` untuk mendaftarkan syscall
-* Menambahkan struktur `struct pinfo` di `proc.h`
-* Menambahkan counter `readcount` di kernel
-* Membuat dua program uji: `ptest.c` dan `rtest.c`
----
+
 
 ## ✅ Uji Fungsionalitas
 
@@ -47,33 +41,11 @@ Tuliskan program uji apa saja yang Anda gunakan, misalnya:
 
 Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
 
-### 📍 Contoh Output `cowtest`:
+![shmtest-haidarhabibia f-240202862](https://github.com/user-attachments/assets/179f4df0-9a03-415f-8789-89a3085cda75)
 
-```
-Child sees: Y
-Parent sees: X
-```
+![cowtest-haidarhabibia f-240202862](https://github.com/user-attachments/assets/1826f118-b9ff-4869-aeed-ec5347bfd423)
 
-### 📍 Contoh Output `shmtest`:
 
-```
-Child reads: A
-Parent reads: B
-```
-
-### 📍 Contoh Output `chmodtest`:
-
-```
-Write blocked as expected
-```
-
-Jika ada screenshot:
-
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
-
----
 
 ## ⚠️ Kendala yang Dihadapi
 
