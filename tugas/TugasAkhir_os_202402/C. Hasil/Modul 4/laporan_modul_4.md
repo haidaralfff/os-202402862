@@ -2,8 +2,8 @@
 
 **Mata Kuliah**: Sistem Operasi
 **Semester**: Genap / Tahun Ajaran 2024–2025
-**Nama**: `<Nama Lengkap>`
-**NIM**: `<Nomor Induk Mahasiswa>`
+**Nama**: `Haidar Habibi Al Farisi`
+**NIM**: `240202862`
 **Modul yang Dikerjakan**:
 `(Contoh: Modul 1 – System Call dan Instrumentasi Kernel)`
 
@@ -11,11 +11,14 @@
 
 ## 📌 Deskripsi Singkat Tugas
 
-Tuliskan deskripsi singkat dari modul yang Anda kerjakan. Misalnya:
+Pada modul ini, saya menambahkan dua fitur baru ke dalam kernel xv6.
 
-* **Modul 1 – System Call dan Instrumentasi Kernel**:
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
----
+Fitur pertama adalah pengaturan hak akses file menggunakan system call chmod(), yang memungkinkan file diatur menjadi hanya-baca atau dapat ditulis. Namun, dari hasil pengujian dengan chmodtest, sistem masih mengizinkan penulisan pada file read-only, yang berarti mekanisme pembatasan akses belum berjalan sempurna.
+
+Fitur kedua adalah penambahan system call random() untuk menghasilkan angka acak. Pengujian dengan randomtest menunjukkan hasil yang berbeda-beda di setiap eksekusi, menandakan fungsi bekerja sesuai harapan.
+
+Modul ini berfokus pada aspek keamanan file dan penambahan utilitas kernel.
+
 
 ## 🛠️ Rincian Implementasi
 
@@ -46,34 +49,8 @@ Tuliskan program uji apa saja yang Anda gunakan, misalnya:
 ## 📷 Hasil Uji
 
 Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
+![WhatsApp Image 2025-07-31 at 21 26 42_98b120af](https://github.com/user-attachments/assets/019e8923-2b17-43b9-986c-c081ad722df5)
 
-### 📍 Contoh Output `cowtest`:
-
-```
-Child sees: Y
-Parent sees: X
-```
-
-### 📍 Contoh Output `shmtest`:
-
-```
-Child reads: A
-Parent reads: B
-```
-
-### 📍 Contoh Output `chmodtest`:
-
-```
-Write blocked as expected
-```
-
-Jika ada screenshot:
-
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
-
----
 
 ## ⚠️ Kendala yang Dihadapi
 
