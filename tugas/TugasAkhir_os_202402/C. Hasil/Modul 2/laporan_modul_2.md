@@ -5,19 +5,21 @@
 **Nama**: `Haidar Habibi Al Farisi`
 **NIM**: `<240202862>`
 
+
 ---
 
 ## 📌 Deskripsi Singkat Tugas
+Modul 2 – Manajemen Proses dan Forking
+Modul ini menguji fitur pembuatan dan sinkronisasi proses menggunakan system call fork() dan wait() pada kernel xv6.
 
-Tuliskan deskripsi singkat dari modul yang Anda kerjakan. Misalnya:
+Dalam tugas ini, program ptest digunakan untuk:
 
-* **Modul 1 – System Call dan Instrumentasi Kernel**:
-  Menambahkan dua system call baru, yaitu `getpinfo()` untuk melihat proses yang aktif dan `getReadCount()` untuk menghitung jumlah pemanggilan `read()` sejak boot.
----
+Membuat dua proses anak menggunakan fork().
 
-## 🛠️ Rincian Implementasi
+Memastikan proses anak dieksekusi dan menyelesaikan tugasnya secara independen.
 
-Tuliskan secara ringkas namun jelas apa yang Anda lakukan:
+Menunggu proses anak selesai (wait()) sebelum proses induk mencetak pesan terakhir.
+
 
 ### Contoh untuk Modul 1:
 
@@ -45,33 +47,12 @@ Tuliskan program uji apa saja yang Anda gunakan, misalnya:
 
 Lampirkan hasil uji berupa screenshot atau output terminal. Contoh:
 
-### 📍 Contoh Output `cowtest`:
 
-```
-Child sees: Y
-Parent sees: X
-```
-
-### 📍 Contoh Output `shmtest`:
-
-```
-Child reads: A
-Parent reads: B
-```
-
-### 📍 Contoh Output `chmodtest`:
-
-```
-Write blocked as expected
-```
 
 Jika ada screenshot:
 
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
+![WhatsApp Image 2025-07-18 at 23 40 25_70b98dd2](https://github.com/user-attachments/assets/57a60b59-4216-48ed-b3dd-863544370792)
 
----
 
 ## ⚠️ Kendala yang Dihadapi
 
