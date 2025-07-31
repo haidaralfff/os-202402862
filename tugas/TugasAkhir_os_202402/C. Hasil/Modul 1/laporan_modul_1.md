@@ -67,13 +67,9 @@ Parent reads: B
 Write blocked as expected
 ```
 
-Jika ada screenshot:
+`<img width="1920" height="1080" alt="TUGAS MODUL 1 OS" src="https://github.com/user-attachments/assets/7e21fc5d-b150-4dde-84d6-0183aec29476" />
 
-```
-![hasil cowtest](./screenshots/cowtest_output.png)
-```
 
----
 
 ## ⚠️ Kendala yang Dihadapi
 
